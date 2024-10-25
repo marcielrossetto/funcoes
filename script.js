@@ -79,7 +79,7 @@ function mostrarMedia() {
     }
     const resultado = media(numeros).toFixed(2);
     document.getElementById('resultadoMedia').innerText = 'Média: ' + resultado;
-<<<<<<< HEAD
+
 }
 
  
@@ -114,8 +114,8 @@ function calcularIMC() {
 
 
 
-=======
-}function calcularIMC() {
+
+function calcularIMC() {
             // Captura os valores dos campos de peso e altura
             const peso = parseFloat(document.getElementById("peso").value);
             const altura = parseFloat(document.getElementById("altura").value);
@@ -133,4 +133,4 @@ function calcularIMC() {
             let mensagem = `<div class='alert alert-info'>Seu IMC é: ${imc.toFixed(2)}</div>`;
             document.getElementById("resultadoImc").innerHTML = mensagem;
         }
->>>>>>> ee7415eb31be0f39165b0cb708f8461d3b1be450
+
