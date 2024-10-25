@@ -79,7 +79,6 @@ function mostrarMedia() {
     }
     const resultado = media(numeros).toFixed(2);
     document.getElementById('resultadoMedia').innerText = 'Média: ' + resultado;
-
 }
 
  
@@ -113,24 +112,4 @@ function calcularIMC() {
 }
 
 
-
-
-function calcularIMC() {
-            // Captura os valores dos campos de peso e altura
-            const peso = parseFloat(document.getElementById("peso").value);
-            const altura = parseFloat(document.getElementById("altura").value);
-
-            // Valida se os campos têm valores válidos
-            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
-                document.getElementById("resultadoImc").innerHTML = "<div class='alert alert-danger'>Por favor, insira valores válidos para peso e altura.</div>";
-                return;
-            }
-
-            // Calcula o IMC
-            const imc = peso / (altura * altura);
-
-            // Exibe o resultado com uma mensagem personalizada
-            let mensagem = `<div class='alert alert-info'>Seu IMC é: ${imc.toFixed(2)}</div>`;
-            document.getElementById("resultadoImc").innerHTML = mensagem;
-        }
 
