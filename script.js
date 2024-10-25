@@ -86,7 +86,7 @@ function mostrarMedia() {
 
             // Valida se os campos têm valores válidos
             if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
-                document.getElementById("resultado").innerHTML = "<div class='alert alert-danger'>Por favor, insira valores válidos para peso e altura.</div>";
+                document.getElementById("resultadoImc").innerHTML = "<div class='alert alert-danger'>Por favor, insira valores válidos para peso e altura.</div>";
                 return;
             }
 
