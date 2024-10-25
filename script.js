@@ -80,3 +80,36 @@ function mostrarMedia() {
     const resultado = media(numeros).toFixed(2);
     document.getElementById('resultadoMedia').innerText = 'Média: ' + resultado;
 }
+
+ 
+function calcularIMC() {
+    // Obtenha os valores de peso e altura
+    const peso = parseFloat(document.getElementById('peso').value);
+    const altura = parseFloat(document.getElementById('alturaImc').value);
+
+    // Verifique se os valores são válidos
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        alert("Por favor, insira valores válidos para peso e altura.");
+        return;
+    }
+
+    // Calcule o IMC
+    const imc = peso / (altura * altura);
+
+    // Exiba o resultado
+    let resultadoTexto = `Seu IMC é ${imc.toFixed(2)}. `;
+    if (imc < 18.5) {
+        resultadoTexto += "Você está abaixo do peso. Considere aumentar a ingestão de calorias com uma dieta equilibrada e inclua exercícios de fortalecimento muscular.";
+    } else if (imc < 24.9) {
+        resultadoTexto += "Você está com peso normal. Mantenha uma dieta equilibrada e continue praticando atividades físicas regularmente.";
+    } else if (imc < 29.9) {
+        resultadoTexto += "Você está com sobrepeso. Tente reduzir a ingestão de calorias, focando em alimentos saudáveis, e aumente a quantidade de exercícios físicos.";
+    } else {
+        resultadoTexto += " Consulte urgentemente um profissional de saúde para um plano de tratamento abrangente, podendo incluir intervenções médicas e mudanças significativas no estilo de vida.";
+    }
+
+    document.getElementById('resultadoImc').innerText = resultadoTexto;
+}
+
+
+
