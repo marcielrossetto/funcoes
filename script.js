@@ -113,3 +113,78 @@ function calcularIMC() {
 
 
 
+//GErenciador de tarefas
+
+
+const inputTarefa = document.getElementById('novaTarefa');
+const btnAdicionar = document.getElementById('adicionarTarefa');
+const listaTarefas = document.getElementById('listaTarefas');
+
+// Função para adicionar nova tarefa
+function adicionarTarefa() {
+    const novaTarefa = inputTarefa.value;
+    if (novaTarefa) {
+        const itemLista = document.createElement('li');
+        itemLista.className = 'list-group-item d-flex justify-content-between align-items-center';
+        itemLista.innerHTML = `
+            <span>${novaTarefa}</span>
+            <div>
+                <button class="btn btn-success btn-sm" onclick="marcarCompletada(this)">✓</button>
+                <button class="btn btn-warning btn-sm" onclick="editarTarefa(this)">✏️</button>
+                <button class="btn btn-danger btn-sm" onclick="excluirTarefa(this)">🗑️</button>
+            </div>
+        `;
+        listaTarefas.appendChild(itemLista);
+        inputTarefa.value = "";
+    }
+}
+
+// Função para marcar tarefa como completada
+function marcarCompletada(button) {
+    const itemLista = button.parentElement.parentElement;
+    itemLista.classList.toggle('completed'); // Adiciona ou remove a classe 'completed'
+}
+
+// Função para excluir tarefa
+function excluirTarefa(button) {
+    const itemLista = button.parentElement.parentElement;
+    itemLista.remove();
+}
+
+// Função para editar tarefa
+function editarTarefa(button) {
+    const itemLista = button.parentElement.parentElement;
+    const span = itemLista.querySelector('span');
+    const novaTarefa = prompt('Edite a tarefa:', span.textContent);
+    if (novaTarefa) {
+        span.textContent = novaTarefa;
+    }
+}
+
+// Função para filtrar tarefas
+function filtrarTarefas(filtro) {
+    const tarefas = listaTarefas.children;
+    for (let tarefa of tarefas) {
+        switch (filtro) {
+            case 'todas':
+                tarefa.style.display = '';
+                break;
+            case 'concluidas':
+                tarefa.style.display = tarefa.classList.contains('completed') ? '' : 'none';
+                break;
+            case 'naoConcluidas':
+                tarefa.style.display = tarefa.classList.contains('completed') ? 'none' : '';
+                break;
+        }
+    }
+}
+
+// Função para ordenar tarefas
+function ordenarTarefas() {
+    const tarefas = Array.from(listaTarefas.children);
+    tarefas.sort((a, b) => a.querySelector('span').textContent.localeCompare(b.querySelector('span').textContent));
+    listaTarefas.innerHTML = '';
+    tarefas.forEach(tarefa => listaTarefas.appendChild(tarefa));
+}
+
+btnAdicionar.addEventListener('click', adicionarTarefa);
