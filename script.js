@@ -142,7 +142,7 @@ function adicionarTarefa() {
 // Função para marcar tarefa como completada
 function marcarCompletada(button) {
     const itemLista = button.parentElement.parentElement;
-    itemLista.classList.toggle('completed'); // Adiciona ou remove a classe 'completed'
+    itemLista.classList.toggle('list-group-item-success'); // Adiciona ou remove a classe 'completed'
 }
 
 // Função para excluir tarefa
