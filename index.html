@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-    <title>Funções JS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body> 
     <div class="container mt-5">
-        <header class="mb-4">Funções JS</header>
-        <h1>Exemplo de Função JavaScript</h1>
+        <h2>Exemplo de Função JavaScript</h2><br>
         <div class="form-group">
-             <h1>Verificar se um número é par</h1>
+             <h1>CALCULADORA</h1>
             <input type="number" class="form-control d-inline-block w-auto" id="valor1" placeholder="Digite o primeiro número">
-            <span> + </span>
+            <span> + * / - </span>
             <input type="number" class="form-control d-inline-block w-auto" id="valor2" placeholder="Digite o segundo número">
         </div>
-        <button type="button" class="btn btn-primary" onclick="mostrarResultado()">Clique para somar</button>
-        <p id="resultado" class="mt-3"></p>
+        <button type="button" class="btn btn-primary" onclick="mostrarResultado()">Clique somar</button>
+        <button type="button" class="btn btn-secondary" onclick="mostrarMultiplicacao()">Clique Multiplicar</button>
+        <button type="button" class="btn btn-success" onclick="mostrarDivisao()">Clique Dividir</button>
+        <button type="button" class="btn btn-warning" onclick="mostrarSubtracao()">Clique Subtração</button>
+        <div id="resultadoSoma" class="alert alert-primary" role="alert"></div>
+        <div id="resultadoMultiplicacao" class="alert alert-secondary" role="alert"></div>
+        <div id="resultadoDivisao" class="alert alert-success" role="alert"></div>
+        <div id="resultadoSubtracao" class="alert alert-warning" role="alert"></div>
     </div>
+
+
     
- <div class="container mt-5">
    
+
+    <div class="container mt-5">
+        <h1>Saber se número é par</h1>
+
     <input class="input-group-text"  id="numero" placeholder="Digite um número">
     <button type="button" class="btn btn-primary"onclick="verificaPar()">Verificar</button>
     <p id="resultadoEhPar"></p>

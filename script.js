@@ -12,8 +12,66 @@
                 return;
             }
             const resultado = soma(valor1, valor2);
-            document.getElementById('resultado').innerText = `O resultado da soma de ${valor1} e ${valor2} é = ${resultado}`;
+            document.getElementById('resultadoSoma').innerText = `O resultado da soma de ${valor1} + ${valor2} = ${resultado}`;
         }
+
+
+//Função multiplicar 
+
+function multiplicar(c, d){
+    return c * d; 
+}
+
+function mostrarMultiplicacao(){
+    const valorC = parseFloat(document.getElementById('valor1').value);
+    const valorD = parseFloat(document.getElementById('valor2').value);
+    if(isNaN(valorC) || isNaN(valorD)|| valorC === "" || valorD === ""){
+        alert("Digite um número");
+        return;
+    }
+    const resultadoMultiplicacao = multiplicar(valorC, valorD);
+    document.getElementById('resultadoMultiplicacao').innerText = `O resultado da multiplicaçao de ${valorC} X ${valorD} = ${resultadoMultiplicacao}`;
+   //alert(`O resultado da multiplicação de ${valorC} e ${valorD} é ${resultadoMultiplicacao}`);
+}
+
+//funcao dividir
+function dividir(c, d){
+    return c / d;
+}
+
+function mostrarDivisao(){
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+
+    if(isNaN(valor1) || isNaN(valor2) || valor1 === "" || valor2 === ""){
+        alert("Digite um número");
+        return;
+    }
+
+    const resultadoDivisao = dividir(valor1, valor2);
+    document.getElementById('resultadoDivisao').innerText = `O resultado da divisão de ${valor1} / ${valor2} = ${resultadoDivisao}`;
+}
+
+// Função dividir
+function subtrair(c, d) {
+    return c - d;
+}
+
+function mostrarSubtracao() {
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+
+    if (isNaN(valor1) || isNaN(valor2)) {
+        alert("Digite um número");
+        return;
+    }
+
+    const resultadoSubtracao = subtrair(valor1, valor2);
+    document.getElementById('resultadoSubtracao').innerText = `O resultado da subtração de ${valor1} - ${valor2} = ${resultadoSubtracao}`;
+}
+
+
+
 //Função ehPar
 
 function ehPar(num){
